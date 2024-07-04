@@ -17,25 +17,25 @@ const PokemonList: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto hide-background">
       {pokemons.length === 0 ? (
-        <div className="flex flex-col justify-center items-center h-screen hide-background ">
+        <div className="flex flex-col justify-center items-center h-screen ">
           <p className="text-xl">도감 불러오는 중!</p>
           <Image
-            src="/image/ev.gif"
+            src="/image/evevev.gif"
             alt="running ev"
             width={200}
             height={100}
           />
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 show-background">
           {pokemons.map((pokemon) => (
             <div
               key={pokemon.id}
               className="pokemon p-4 border rounded-lg flex flex-col items-center bg-green-500 bg-opacity-80"
             >
-              <Link href={`/pokemons/${pokemon.id}`}>
+              <Link href={`/pokemon/${pokemon.id}`}>
                 <div className="relative">
                   <Image
                     src={pokemon.sprites.front_default}
