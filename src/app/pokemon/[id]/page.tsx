@@ -2,9 +2,10 @@ import React from "react";
 import { fetchPokemonData } from "@/apis/pokoemon";
 import Link from "next/link";
 import Image from "next/image";
+import { Pokemon } from "@/types/pokemon";
 
 const PokemonDetailPage = async ({ params }: { params: { id: string } }) => {
-  const pokemon = await fetchPokemonData(params.id);
+  const pokemon: Pokemon = await fetchPokemonData(params.id);
 
   const renderTypes = () => {
     return pokemon.types.map((type) => (
